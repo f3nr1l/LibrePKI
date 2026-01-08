@@ -5,11 +5,13 @@ services:
     volumes:
       - ./ca/data:/data
     ports:
-      - "8888:8888"
+      - "8877:8877"
+    environment:
+      - CFSSL_LOGLEVEL=info
   web:
     build: ./web
     ports:
-      - "5000:5000"
+      - "5050:5050"
     volumes:
       - ./web/templates:/app/templates
       - ./web/static:/app/static
