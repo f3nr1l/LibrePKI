@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="jumbotron bg-light p-5 rounded-lg m-3">
+    <h1 class="display-4">Gestion de PKI</h1>
+    <p class="lead">Bienvenue sur l'interface de gestion de vos certificats SSL.</p>
+    <hr class="my-4">
+    <p>Utilisez le menu pour naviguer entre les fonctionnalités.</p>
+    <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+        <a class="btn btn-primary btn-lg" href="{{ url_for('list_certs') }}" role="button">
+            <i class="fas fa-certificate me-2"></i>Voir les Certificats
+        </a>
+        <a class="btn btn-outline-secondary btn-lg" href="{{ url_for('generate_cert') }}" role="button">
+            <i class="fas fa-plus-circle me-2"></i>Générer un Certificat
+        </a>
+    </div>
+</div>
+{% endblock %}

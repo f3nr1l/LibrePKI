@@ -1,0 +1,17 @@
+version: '3.8'
+services:
+  ca:
+    build: ./ca
+    volumes:
+      - ./ca/data:/data
+    ports:
+      - "8888:8888"
+  web:
+    build: ./web
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./web/templates:/app/templates
+      - ./web/static:/app/static
+    depends_on:
+      - ca
