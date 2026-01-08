@@ -16,3 +16,7 @@ Une application Dockerisée pour gérer une PKI (Public Key Infrastructure) avec
 2. Builder les images :
    ```bash
    docker-compose build
+3. Démarrer les conteneurs :
+   ```bash
+   docker-compose up
+4. Accéder à l'interface sur http://localhost:5000.
