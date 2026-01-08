@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block content %}
+<h1 class="mb-4"><i class="fas fa-upload me-2"></i>Uploader un Certificat</h1>
+
+<div class="alert alert-info">
+    <i class="fas fa-info-circle me-2"></i>Cette fonctionnalité est un placeholder.
+</div>
+
+<div class="card">
+    <div class="card-body">
+        <form>
+            <div class="mb-3">
+                <label for="certFile" class="form-label">Fichier de Certificat</label>
+                <input class="form-control" type="file" id="certFile" accept=".pem,.crt,.key" required>
+            </div>
+            <div class="mb-3">
+                <label for="certType" class="form-label">Type de Certificat</label>
+                <select class="form-select" id="certType" required>
+                    <option selected disabled>Choisir...</option>
+                    <option value="root">Racine (Intermédiaire)</option>
+                    <option value="server">Serveur</option>
+                    <option value="client">Client</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary">
+                <i class="fas fa-upload me-2"></i>Uploader
+            </button>
+        </form>
+    </div>
+</div>
+{% endblock %}
