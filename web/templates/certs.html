@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block content %}
+<h1 class="mb-4"><i class="fas fa-certificate me-2"></i>Liste des Certificats</h1>
+
+<div class="alert alert-info">
+    <i class="fas fa-info-circle me-2"></i>Les données affichées sont des placeholders.
+</div>
+
+<div class="row">
+    {% for cert in certs %}
+    <div class="col-md-6 col-lg-4 mb-4">
+        <div class="card h-100">
+            <div class="card-header bg-{{ 'success' if cert.status == 'Valide' else 'warning' }} text-white">
+                <i class="fas fa-{{ 'shield-alt' if cert.type == 'intermediate' else 'server' if cert.type == 'server' else 'user' }} me-2"></i>
+                {{ cert.type|capitalize }}
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">{{ cert.name }}</h5>
+                <p class="card-text">
+                    <strong>Statut:</strong> <span class="badge bg-{{ 'success' if cert.status == 'Valide' else 'warning' }}">{{ cert.status }}</span><br>
+                    <strong>Expire le:</strong> {{ cert.expires }}
+                </p>
+            </div>
+            <div class="card-footer bg-transparent">
+                <a href="#" class="btn btn-outline-primary btn-sm">
+                    <i class="fas fa-download me-1"></i>Télécharger
+                </a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
