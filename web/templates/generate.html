@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block content %}
+<h1 class="mb-4"><i class="fas fa-plus-circle me-2"></i>Générer un Certificat</h1>
+
+<div class="alert alert-info">
+    <i class="fas fa-info-circle me-2"></i>Cette fonctionnalité est un placeholder.
+</div>
+
+<div class="card">
+    <div class="card-body">
+        <form>
+            <div class="mb-3">
+                <label for="certType" class="form-label">Type de Certificat</label>
+                <select class="form-select" id="certType" required>
+                    <option selected disabled>Choisir...</option>
+                    <option value="server">Serveur</option>
+                    <option value="client">Client</option>
+                    <option value="intermediate">Intermédiaire</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="commonName" class="form-label">Nom Commun (CN)</label>
+                <input type="text" class="form-control" id="commonName" placeholder="ex: mon-domaine.com" required>
+            </div>
+            <div class="mb-3">
+                <label for="expiry" class="form-label">Validité (jours)</label>
+                <input type="number" class="form-control" id="expiry" value="365" required>
+            </div>
+            <button type="submit" class="btn btn-primary">
+                <i class="fas fa-magic me-2"></i>Générer
+            </button>
+        </form>
+    </div>
+</div>
+{% endblock %}
