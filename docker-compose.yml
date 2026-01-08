@@ -1,4 +1,3 @@
-version: '3.8'
 services:
   ca:
     build: ./ca
@@ -15,5 +14,6 @@ services:
     volumes:
       - ./web/templates:/app/templates
       - ./web/static:/app/static
+      - ./ca/data:/data
     depends_on:
       - ca
